@@ -35,8 +35,8 @@ $ni_number = $_POST["txtni"];
 
 $sql = "INSERT INTO tblEmp (fname,lname,email,gender,ninumber) VALUES
 ('".$first_name."','".$last_name."','".$email."','".$gender."','".$ni_number."')";
-$result = $conn->query(query:$sql);
 
+$result = $conn->query(query:$sql);
 echo "<script>alert('Employee added')</script>";
 }
 ?>
@@ -109,7 +109,9 @@ if ($result->num_rows > 0) {
         <td>".$row["email"]."</td>
         <td>".$row["gender"]."</td>
         <td>".$row["ninumber"]."</td>
-        <td><a href='./update.php?eid=" . $row["eid"]."'/> update </a> </td>
+        <td>
+        <a href='./update.php?eid=" . $row["eid"]."'/> update </a>
+        <a href='./delete.php?eid=" . $row["eid"]."'/> delete </a> </td>
         </tr>
             ";
 
